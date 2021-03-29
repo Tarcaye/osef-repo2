@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Reverse Polish Notation</h1>
+
+
+<p>La notation polonaise inverse ou <em>"NPI"</em> (en anglais RPN pour Reverse Polish Notation), également connue sous
+    le nom de notation post-fixée, permet d’écrire de façon non ambiguë les formules arithmétiques sans utiliser de
+    parenthèses.</p>
+
+<p>La lecture d'une opération décrite en NPI se fait de gauche à droite de fait que, si pour l'opérateur fictif "¤" on a
+    "a ¤ b = c" et "c ¤ d = e", pour l'opération NPI "d a b ¤ ¤" on procède de la manière suivante :
+<ol>
+    <li>On parcours l'opération à la recherche du premier opérateur "d a b <b><u>¤</u></b> ¤"</li>
+    <li>On lui associe les deux opérandes précédents "d <b><u>a b ¤</u></b> ¤"</li>
+    <li>On résout <em>en place</em> l'opération "d <b><u>c</u></b> ¤"</li>
+    <li>On recommence la recherche d'opérateur "d c <b><u>¤</u></b>"</li>
+    <li>On associe les deux opérandes précédents "<b><u>d c ¤</u></b>"</li>
+    <li>On résout "<b><u>e</u></b>"</li>
+    <li>Il n'y a plus d'opérateurs donc on conclue : "d a b ¤ ¤ = e"</li>
+</ol>
+</p>
+
+<p>En pratique, l’expression “3 × (4 + 7)” peut s’écrire en NPI sous la forme “4 7 + 3 x”, ou encore sous la forme “3 4
+    7 + x”.</p>
+
+<h2>Mission</h2>
+
+<p>Vous devez développer une calculatrice utilisant la notation RPN.</p>
+
+<p>La calculatrice prend une chaine de caractères en entrée, et donne le résultat numérique en sortie.</p>
+
+
+</body>
+</html>
